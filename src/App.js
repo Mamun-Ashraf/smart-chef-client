@@ -4,20 +4,16 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>This is header</h1>
+      <button type="button" className="px-8 py-3 font-semibold rounded dark:bg-gray-100 dark:text-gray-800">Basic</button>
+      <button type="button" className="px-8 py-3 font-semibold border rounded dark:border-gray-100 dark:text-gray-100">Border</button>
+      <button type="button" className="px-8 py-3 font-semibold rounded-full dark:bg-red-500 dark:text-purple-800">Rounded</button>
+      <br />
+      <button type="button" className="px-8 py-3 font-semibold rounded-full bg-yellow-400 text-red-500">Rounded</button>
+      <br />
+      <button type="button" className="px-8 py-3 font-semibold border rounded border-gray-800 text-gray-800">Border</button>
+      <br />
+      <button type="button" className="px-8 py-3 font-semibold rounded bg-blue-500 text-gray-100">Basic</button>
     </div>
   );
 }
