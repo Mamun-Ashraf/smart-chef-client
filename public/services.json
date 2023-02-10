@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "abc",
+        "image": "https://source.unsplash.com/random/300x300/?2",
+        "rating": "abc",
+        "price": 10,
+        "description": "abc"
+    },
+    {
+        "id": 2,
+        "name": "abc",
+        "image": "https://source.unsplash.com/random/300x300/?2",
+        "rating": "abc",
+        "price": 10,
+        "description": "abc"
+    },
+    {
+        "id": 3,
+        "name": "abc",
+        "image": "https://source.unsplash.com/random/300x300/?2",
+        "rating": "abc",
+        "price": 10,
+        "description": "abc"
+    },
+    {
+        "id": 4,
+        "name": "abc",
+        "image": "https://source.unsplash.com/random/300x300/?2",
+        "rating": "abc",
+        "price": 10,
+        "description": "abc"
+    },
+    {
+        "id": 5,
+        "name": "abc",
+        "image": "https://source.unsplash.com/random/300x300/?2",
+        "rating": "abc",
+        "price": 10,
+        "description": "abc"
+    },
+    {
+        "id": 6,
+        "name": "abc",
+        "image": "https://source.unsplash.com/random/300x300/?2",
+        "rating": "abc",
+        "price": 10,
+        "description": "abc"
+    }
+]

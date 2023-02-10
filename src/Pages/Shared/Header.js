@@ -11,6 +11,7 @@ const Header = () => {
                     <ul className="items-stretch hidden space-x-3 lg:flex">
                         <li className="flex">
                             <Link to='/' className="flex items-center px-4 mx-5 text-pink-400 text-xl">Home</Link>
+                            <Link to='/blog' className="flex items-center px-4 text-pink-400 text-xl">Blog</Link>
                         </li>
                     </ul>
                 </div>
