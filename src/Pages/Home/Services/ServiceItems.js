@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ServiceItems = ({ item }) => {
     const { _id, name, image, rating, price, description } = item;
@@ -10,10 +11,11 @@ const ServiceItems = ({ item }) => {
                 <img src={image} alt="" className="object-cover object-center w-full rounded-t-md h-72 bg-gray-500" />
                 <div className="flex flex-col justify-between p-6 space-y-8">
                     <div>
-
                         <p className="text-gray-800">Curabitur luctus erat nunc, sed ullamcorper erat vestibulum eget.</p>
                     </div>
-                    <button type="button" className="flex items-center justify-center w-1/2 p-3 font-semibold rounded-md btn btn-outline btn-secondary mx-auto">View Details</button>
+                    <Link to={`/services/${_id}`}>
+                        <button type="button" className="flex items-center justify-center w-1/2 p-3 font-semibold rounded-md btn btn-outline btn-secondary mx-auto">View Details</button>
+                    </Link>
                 </div>
             </div>
         </div>
