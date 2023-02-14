@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const ServiceDetails = () => {
 
     const service = useLoaderData();
     const { _id, name, image, rating, price, description } = service;
+
+    const { user } = useContext(AuthContext);
 
     const [review, setReview] = useState({});
     const [reviews, setReviews] = useState([]);
@@ -48,10 +51,16 @@ const ServiceDetails = () => {
                 </div>
             </div>
             <div>
-                <form onSubmit={handleReview}>
-                    <input onBlur={handleInputBlur} type="text" name='review' placeholder="Your review" className="input input-bordered input-lg w-full mb-5" />
-                    <button type="submit" className='btn btn-sm float-right'>Add review</button>
-                </form>
+                {
+                    user?.uid ?
+
+                        <form onSubmit={handleReview}>
+                            <input onBlur={handleInputBlur} type="text" name='review' placeholder="Your review" className="input input-bordered input-lg w-full mb-5" />
+                            <button type="submit" className='btn btn-sm float-right'>Add review</button>
+                        </form>
+                        :
+                        <h2 className='text-lg'>Please <Link to='/signin' className='text-blue-600'>Sign in</Link> to review</h2>
+                }
                 {
                     reviews.map(rev => <p key={rev._id}>{rev.review}</p>)
                 }

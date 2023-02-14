@@ -21,7 +21,7 @@ const Header = () => {
                     <ul className="items-stretch hidden space-x-3 lg:flex">
                         <li className="flex">
                             {
-                                user?.email ?
+                                user?.uid ?
                                     <>
                                         <Link to='/' className="flex items-center px-4 mx-5 text-pink-400 text-xl">Home</Link>
                                         <Link to='/blog' className="flex items-center px-4 mx-5 text-pink-400 text-xl">Blog</Link>
@@ -41,7 +41,7 @@ const Header = () => {
                 </div>
                 <div className="items-center flex-shrink-0 hidden lg:flex">
                     {
-                        user?.email ?
+                        user?.uid ?
                             <button onClick={handleSignOut} className="btn btn-sm">Sign out</button>
                             :
                             <>
