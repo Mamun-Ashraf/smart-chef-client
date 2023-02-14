@@ -25,8 +25,8 @@ const Header = () => {
                                     <>
                                         <Link to='/' className="flex items-center px-4 mx-5 text-pink-400 text-xl">Home</Link>
                                         <Link to='/blog' className="flex items-center px-4 mx-5 text-pink-400 text-xl">Blog</Link>
-                                        <Link to='/' className="flex items-center px-4 mx-5 text-pink-400 text-xl">My reviews</Link>
-                                        <Link to='/' className="flex items-center px-4 text-pink-400 text-xl">Add Service</Link>
+                                        <Link to='/myreviews' className="flex items-center px-4 mx-5 text-pink-400 text-xl">My reviews</Link>
+                                        <Link to='/addservice' className="flex items-center px-4 text-pink-400 text-xl">Add Service</Link>
                                     </>
                                     :
                                     <>

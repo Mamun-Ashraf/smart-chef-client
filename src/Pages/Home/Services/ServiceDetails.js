@@ -8,8 +8,10 @@ const ServiceDetails = () => {
     const { _id, name, image, rating, price, description } = service;
 
     const { user } = useContext(AuthContext);
+    const displayName = user?.displayName;
+    const photoURL = user?.photoURL;
 
-    const [review, setReview] = useState({});
+    const [review, setReview] = useState({ displayName: displayName, photoURL: photoURL });
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
@@ -20,6 +22,7 @@ const ServiceDetails = () => {
 
     const handleReview = event => {
         event.preventDefault();
+
         event.target.reset();
 
         fetch('http://localhost:5000/review', {

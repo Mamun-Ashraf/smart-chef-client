@@ -6,6 +6,9 @@ import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
 import Blog from "../Pages/Blog/Blog";
 import ServiceDetails from "../Pages/Home/Services/ServiceDetails";
+import ProtectedRoute from "./ProtectedRoute";
+import MyReviews from "../Pages/MyReviews/MyReviews";
+import AddService from "../Pages/AddService/AddService";
 
 const router = createBrowserRouter([
     {
@@ -29,6 +32,14 @@ const router = createBrowserRouter([
                 path: 'services/:id',
                 element: <ServiceDetails></ServiceDetails>,
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+            },
+            {
+                path: '/myreviews',
+                element: <ProtectedRoute><MyReviews></MyReviews></ProtectedRoute>
+            },
+            {
+                path: '/addservice',
+                element: <ProtectedRoute><AddService></AddService></ProtectedRoute>
             },
             {
                 path: '/signin',
