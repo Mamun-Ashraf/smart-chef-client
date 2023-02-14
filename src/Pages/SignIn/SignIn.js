@@ -5,7 +5,7 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const SignIn = () => {
 
-    const { signin } = useContext(AuthContext);
+    const { signin, signInWithGoogle } = useContext(AuthContext);
 
     const handleSignIn = event => {
         event.preventDefault()
@@ -23,6 +23,16 @@ const SignIn = () => {
             })
             .catch(err => console.error(err));
     }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
+            .catch(err => console.error(err))
+    }
+
     return (
         <div>
             <div className="flex flex-col w-1/3 mx-auto p-6 rounded-md sm:p-10 bg-gray-300 text-gray-800 mb-12">
@@ -48,6 +58,8 @@ const SignIn = () => {
                         <div>
                             <input type="submit" value="Sign in" className="w-full px-8 py-3 font-semibold rounded-md bg-violet-600 text-gray-50" />
                         </div>
+                        <h2 className='text-center text-xl'>OR</h2>
+                        <button onClick={handleGoogleSignIn} className='btn btn-outline btn-primary w-full'>Sign in with google</button>
                         <p className="px-6 text-sm text-center text-gray-600">Don't have an account yet?  <Link to='/signup' className='text-blue-600'>Sign up</Link>
                         </p>
                     </div>

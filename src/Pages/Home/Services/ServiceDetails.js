@@ -50,7 +50,7 @@ const ServiceDetails = () => {
             <div>
                 <form onSubmit={handleReview}>
                     <input onBlur={handleInputBlur} type="text" name='review' placeholder="Your review" className="input input-bordered input-lg w-full mb-5" />
-                    <button type="submit" className='btn btn-sm float-right'>Submit review</button>
+                    <button type="submit" className='btn btn-sm float-right'>Add review</button>
                 </form>
                 {
                     reviews.map(rev => <p key={rev._id}>{rev.review}</p>)
