@@ -22,7 +22,6 @@ const ServiceDetails = () => {
 
     const handleReview = event => {
         event.preventDefault();
-
         event.target.reset();
 
         fetch('http://localhost:5000/review', {
