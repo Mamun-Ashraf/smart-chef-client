@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ServiceItems = ({ item }) => {
-    const { _id, name, image, rating, price, description } = item;
+    const { _id, name, image, price, description } = item;
     return (
         <div>
             <div className=" rounded-md shadow-md bg-gray-200 text-gray-800">

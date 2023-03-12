@@ -9,6 +9,7 @@ import ServiceDetails from "../Pages/Home/Services/ServiceDetails";
 import ProtectedRoute from "./ProtectedRoute";
 import MyReviews from "../Pages/MyReviews/MyReviews";
 import AddService from "../Pages/AddService/AddService";
+import FoodAll from "../Pages/Home/Foods/FoodAll";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
                 path: 'services/:id',
                 element: <ServiceDetails></ServiceDetails>,
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+            },
+            {
+                path: '/foodAll',
+                element: <FoodAll></FoodAll>,
+                loader: () => fetch('http://localhost:5000/foodsAll')
             },
             {
                 path: '/myreviews',

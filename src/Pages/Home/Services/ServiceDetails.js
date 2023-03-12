@@ -5,7 +5,7 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 const ServiceDetails = () => {
 
     const service = useLoaderData();
-    const { _id, name, image, rating, price, description } = service;
+    const { _id, name, image, price, description } = service;
 
     const { user } = useContext(AuthContext);
     const displayName = user?.displayName;
@@ -57,7 +57,7 @@ const ServiceDetails = () => {
                     <h2 className="text-3xl font-semibold tracking-wide mb-4 px-6">{name}</h2>
                     <h3 className='text-xl mb-4 px-6'>Price: ${price}</h3>
                     <img src={image} alt="" className="object-cover object-center w-full rounded-t-md h-72 mb-5 bg-gray-500" />
-                    <p className="text-gray-800">Curabitur luctus erat nunc, sed ullamcorper erat vestibulum eget.</p>
+                    <p className="text-gray-800">{description}</p>
                 </div>
             </div>
             <div>

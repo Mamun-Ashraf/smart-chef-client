@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Snacks",
+        "image": "https://i.ibb.co/9Vfq777/snacks.jpg"
+    },
+    {
+        "name": "Fast foods",
+        "image": "https://i.ibb.co/s58FxqP/fastfoods.webp"
+    },
+    {
+        "name": "Breakfast",
+        "image": "https://i.ibb.co/wMbt5C1/breakfast.jpg"
+    },
+    {
+        "name": "Lunch",
+        "image": "https://i.ibb.co/qs0RdDM/lunch.jpg"
+    },
+    {
+        "name": "Dinner",
+        "image": "https://i.ibb.co/Lt10Dzf/dinner.jpg"
+    },
+    {
+        "name": "Drinks",
+        "image": "https://i.ibb.co/2hQdJSr/cold-drinks.jpg"
+    },
+    {
+        "name": "Sweats",
+        "image": "https://i.ibb.co/pfp3MC9/sweets.jpg"
+    }
+]
