@@ -3,7 +3,7 @@ import React from 'react';
 const Blog = () => {
     return (
 
-        <div>
+        <div className='mb-12'>
             <p><span className="text-2xl font-bold">Q-1:</span>
                 What is the difference between SQL and NoSQL ?
             </p>

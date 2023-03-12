@@ -7,7 +7,7 @@ const ProtectedRoute = ({ children }) => {
     if (user && user.uid) {
         return children;
     }
-    return <Navigate to='/login'></Navigate>
+    return <Navigate to='/signin'></Navigate>
 };
 
 export default ProtectedRoute;

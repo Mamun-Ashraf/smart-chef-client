@@ -13,6 +13,7 @@ const Services = () => {
     }, [])
     return (
         <div>
+            <h2 className='text-4xl text-pink-600 mb-12'>Services We Provide:</h2>
             <div className='grid grid-cols-3 gap-12 my-5'>
                 {
                     items.map(item => <ServiceItems
@@ -21,7 +22,7 @@ const Services = () => {
                     ></ServiceItems>)
                 }
             </div>
-            <Link to='/services'>
+            <Link to='/serviceAll'>
                 <button type="button" className="flex items-center justify-center px-12 py-3 mx-auto my-10 font-semibold  rounded-md btn btn-outline btn-primary">See All</button>
             </Link>
         </div>

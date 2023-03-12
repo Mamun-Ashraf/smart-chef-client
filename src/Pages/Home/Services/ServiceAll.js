@@ -4,7 +4,6 @@ import ServiceItems from './ServiceItems';
 
 const ServiceAll = () => {
     const items = useLoaderData();
-    console.log(items);
     return (
         <div className='grid grid-cols-3 gap-12 my-5'>
             {

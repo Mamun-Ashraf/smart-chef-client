@@ -10,9 +10,10 @@ const ServiceDetails = () => {
     const { user } = useContext(AuthContext);
     const displayName = user?.displayName;
     const photoURL = user?.photoURL;
+    const email = user?.email;
 
-    const [review, setReview] = useState({ displayName: displayName, photoURL: photoURL });
     const [reviews, setReviews] = useState([]);
+    // const [reviewInfo, setReviewInfo] = useState([]);
 
     useEffect(() => {
         fetch('http://localhost:5000/reviews')
@@ -22,26 +23,33 @@ const ServiceDetails = () => {
 
     const handleReview = event => {
         event.preventDefault();
+        const review = event.target.review.value;
+        const reviewInfo = { review, displayName, photoURL, email }
+        // const newReviewDetails = { ...reviewDetails }
+        // setReviewInfo(reviewDetails)
         event.target.reset();
 
-        fetch('http://localhost:5000/review', {
-            method: 'POST',
+        // fetch('http://localhost:5000/review', {
+        //     method: 'POST',
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify(reviewInfo)
+        // })
+        //     .then(res => res.json)
+        //     .then(data => console.log(data))
+
+        fetch(`http://localhost:5000/services/${_id}`, {
+            method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(review)
+            body: JSON.stringify(reviewInfo)
         })
             .then(res => res.json)
             .then(data => console.log(data))
     }
 
-    const handleInputBlur = event => {
-        const field = event.target.name;
-        const value = event.target.value;
-        const newReview = { ...review }
-        newReview[field] = value;
-        setReview(newReview);
-    }
     return (
         <div className='flex'>
             <div className='mx-auto w-1/2 mb-12'>
@@ -57,14 +65,16 @@ const ServiceDetails = () => {
                     user?.uid ?
 
                         <form onSubmit={handleReview}>
-                            <input onBlur={handleInputBlur} type="text" name='review' placeholder="Your review" className="input input-bordered input-lg w-full mb-5" />
+                            <input type="text" name='review' placeholder="Your review" className="input input-bordered input-lg w-full mb-5" />
                             <button type="submit" className='btn btn-sm float-right'>Add review</button>
                         </form>
                         :
                         <h2 className='text-lg'>Please <Link to='/signin' className='text-blue-600'>Sign in</Link> to review</h2>
                 }
                 {
-                    reviews.map(rev => <p key={rev._id}>{rev.review}</p>)
+                    reviews.map(rev => <p key={rev._id}>{rev.review} {rev.displayName} {
+                        <img src={rev.photoURL} alt='' />
+                    }</p>)
                 }
             </div>
         </div>

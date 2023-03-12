@@ -1,50 +1,50 @@
 [
     {
         "id": 1,
-        "name": "abc",
-        "image": "https://source.unsplash.com/random/300x300/?2",
+        "name": "Home delivery",
+        "image": "https://ibb.co/5RM70h6",
         "rating": "abc",
         "price": 10,
-        "description": "abc"
+        "description": "We serve your ordered food to your door anywhere in Bangladesh"
     },
     {
         "id": 2,
-        "name": "abc",
-        "image": "https://source.unsplash.com/random/300x300/?2",
+        "name": "Fastest Delivery",
+        "image": "https://ibb.co/tBjYf8b",
         "rating": "abc",
-        "price": 10,
-        "description": "abc"
+        "price": 15,
+        "description": "Get your food delivered in less than an hour"
     },
     {
         "id": 3,
-        "name": "abc",
-        "image": "https://source.unsplash.com/random/300x300/?2",
+        "name": "Regular Package",
+        "image": "https://ibb.co/vHMDqPf",
         "rating": "abc",
-        "price": 10,
-        "description": "abc"
+        "price": 5,
+        "description": "Get your food as you ordered"
     },
     {
         "id": 4,
-        "name": "abc",
-        "image": "https://source.unsplash.com/random/300x300/?2",
+        "name": "Daily Package",
+        "image": "https://ibb.co/7vKZ8PJ",
         "rating": "abc",
         "price": 10,
-        "description": "abc"
+        "description": "You can order Whole day meal under this package"
     },
     {
         "id": 5,
-        "name": "abc",
-        "image": "https://source.unsplash.com/random/300x300/?2",
+        "name": "Fitness food",
+        "image": "https://ibb.co/17jJ0nM",
         "rating": "abc",
-        "price": 10,
-        "description": "abc"
+        "price": 100,
+        "description": "We serve natural fitness food"
     },
     {
         "id": 6,
-        "name": "abc",
-        "image": "https://source.unsplash.com/random/300x300/?2",
+        "name": "Special package",
+        "image": "https://ibb.co/61SHBVn",
         "rating": "abc",
-        "price": 10,
-        "description": "abc"
+        "price": 20,
+        "description": "You can order any special food, any time and from anywhere in Bangladesh"
     }
 ]

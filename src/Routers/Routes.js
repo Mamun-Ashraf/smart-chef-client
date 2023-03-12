@@ -24,7 +24,7 @@ const router = createBrowserRouter([
                 element: <Blog></Blog>
             },
             {
-                path: '/services',
+                path: '/serviceAll',
                 element: <ServiceAll></ServiceAll>,
                 loader: () => fetch('http://localhost:5000/serviceAll')
             },
@@ -35,7 +35,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/myreviews',
-                element: <ProtectedRoute><MyReviews></MyReviews></ProtectedRoute>
+                element: <ProtectedRoute><MyReviews></MyReviews></ProtectedRoute>,
+                loader: () => fetch('http://localhost:5000/reviews')
             },
             {
                 path: '/addservice',
