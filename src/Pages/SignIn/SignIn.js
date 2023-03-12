@@ -1,11 +1,14 @@
 
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const SignIn = () => {
 
     const { signin, signInWithGoogle } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/'
 
     const handleSignIn = event => {
         event.preventDefault()
@@ -20,6 +23,7 @@ const SignIn = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                navigate(from, { replace: true });
             })
             .catch(err => console.error(err));
     }
@@ -49,7 +53,6 @@ const SignIn = () => {
                         <div>
                             <div className="flex justify-between mb-2">
                                 <label htmlFor="password" className="text-sm">Password</label>
-                                <a rel="noopener noreferrer" href="#" className="text-xs hover:underline text-gray-600">Forgot password?</a>
                             </div>
                             <input type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800" />
                         </div>
