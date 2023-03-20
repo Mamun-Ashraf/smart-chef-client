@@ -1,13 +1,13 @@
 import React from 'react';
 
-const ServiceReview = ({ rev }) => {
-    const { review, displayName, photoURL } = rev;
+const ServiceReview = ({ releventServiceReview }) => {
+    const { userReview, userName, userImage } = releventServiceReview;
     return (
         <div className='flex my-8 items-center'>
-            <img src={photoURL} alt='' className='mx-5 rounded-full w-1/6' />
+            <img src={userImage} alt='' className='mx-5 rounded-full w-1/6' />
             <div>
-                <h2 className='font-bold'>{displayName}</h2>
-                <h3>{review}</h3>
+                <h2 className='font-bold'>{userName}</h2>
+                <h3>{userReview}</h3>
             </div>
         </div>
     );

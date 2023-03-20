@@ -9,26 +9,28 @@ const ServiceDetails = () => {
     const { _id, name, image, price, description } = service;
 
     const { user } = useContext(AuthContext);
-    const displayName = user?.displayName;
-    const photoURL = user?.photoURL;
-    const email = user?.email;
-    const id = _id;
+    const userName = user?.displayName;
+    const userImage = user?.photoURL;
+    const userEmail = user?.email;
+    const serviceId = _id;
+    const serviceName = name;
+    const serviceImage = image;
 
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://smart-chef-server.vercel.app/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])
 
     const handleReview = event => {
         event.preventDefault();
-        const review = event.target.review.value;
-        const reviewInfo = { id, review, displayName, photoURL, email }
+        const userReview = event.target.userReview.value;
+        const reviewInfo = { serviceId, serviceName, serviceImage, userReview, userName, userImage, userEmail }
         event.target.reset();
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://smart-chef-server.vercel.app/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -40,7 +42,7 @@ const ServiceDetails = () => {
 
     }
 
-    const releventReviews = reviews.filter(releventReview => releventReview.id === id);
+    const releventServiceReviews = reviews.filter(review => review.serviceId === serviceId);
 
     return (
         <div className='flex'>
@@ -57,7 +59,7 @@ const ServiceDetails = () => {
                     user?.uid ?
 
                         <form onSubmit={handleReview}>
-                            <input type="text" name='review' placeholder="Please add your review" className="input input-bordered input-lg w-full mb-4" />
+                            <input type="text" name='userReview' placeholder="Please add your review" className="input input-bordered input-lg w-full mb-4" />
                             <button type="submit" className='btn btn-sm float-right'>Add review</button>
                         </form>
                         :
@@ -65,9 +67,9 @@ const ServiceDetails = () => {
                 }
 
                 {
-                    releventReviews.map(rev => <ServiceReview
-                        key={rev._id}
-                        rev={rev}
+                    releventServiceReviews.map(releventServiceReview => <ServiceReview
+                        key={releventServiceReview._id}
+                        releventServiceReview={releventServiceReview}
                     ></ServiceReview>)
                 }
             </div>

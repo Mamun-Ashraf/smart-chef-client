@@ -27,22 +27,22 @@ const router = createBrowserRouter([
             {
                 path: '/serviceAll',
                 element: <ServiceAll></ServiceAll>,
-                loader: () => fetch('http://localhost:5000/serviceAll')
+                loader: () => fetch('https://smart-chef-server.vercel.app/serviceAll')
             },
             {
                 path: 'services/:id',
                 element: <ServiceDetails></ServiceDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://smart-chef-server.vercel.app/services/${params.id}`)
             },
             {
                 path: '/foodAll',
                 element: <FoodAll></FoodAll>,
-                loader: () => fetch('http://localhost:5000/foodsAll')
+                loader: () => fetch('https://smart-chef-server.vercel.app/foodsAll')
             },
             {
                 path: '/myreviews',
                 element: <ProtectedRoute><MyReviews></MyReviews></ProtectedRoute>,
-                loader: () => fetch('http://localhost:5000/reviews')
+                loader: () => fetch('https://smart-chef-server.vercel.app/reviews')
             },
             {
                 path: '/addservice',

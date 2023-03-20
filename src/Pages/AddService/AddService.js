@@ -12,7 +12,7 @@ const AddService = () => {
         const addService = { name, image, price, description }
         form.reset();
 
-        fetch('http://localhost:5000/addservice', {
+        fetch('https://smart-chef-server.vercel.app/addservice', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
